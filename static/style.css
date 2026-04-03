@@ -1,0 +1,607 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    margin: 0px;
+    top: 0px;
+    outline: 0;
+}
+
+/* Navegação */
+.navbar{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    height: 70px;
+}
+
+a{
+    margin: 10px;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+h1{
+    margin-left: 5px;
+}
+
+/*inicio View*/
+body {
+    background: #fff;
+}
+
+header {
+    width: auto;
+    min-height: 10%;
+    background: #0350a2;
+    color: #fff;
+    padding: 3px 3px;
+    text-align: center;
+    margin-bottom: 10px;
+    position: sticky;
+}
+
+.view_tasks{
+    margin: 2px;
+    background: #01014b;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    padding: 10px 6px;
+}
+
+
+.task-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+}
+
+.task-table th, .task-table td {
+    border: 1px solid #e3e3e3;
+    padding: 6px 8px;
+    text-align: left;
+}
+
+.task-header th {
+    background: #f7f7f7;
+    color: #0c0c0c;
+    font-size: large;
+    font-weight: 400;
+    text-align: center;
+}
+
+.task-row td{
+    background: #e9e8e8c4;
+    font-size: small;
+   font-weight: 400;
+}
+
+td a {
+    font-weight: bold;
+    color:#000000;
+    text-decoration: none;
+}
+
+table[type="table"] {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+}
+
+table[type="table"] th, table[type="table"] td {
+    border: 1px solid #e3e3e3;
+    padding: 8px 10px;
+}
+
+table[type="table"] th {
+    width: 100%;
+    background: #f7f7f7;
+    color: #333;
+    font-weight: 200;
+    text-align: center;
+    font-size: 0.8em;
+}
+
+tr[style*="background:#f7f7f7"] {
+    background: #f7f7f7c4 !important;
+}
+
+
+span[style*="color:green"] {
+    font-weight: bold;
+}
+
+/* Label geral*/
+label {
+    display: flex;
+    justify-content: center;
+    text-justify: center;
+    color: #0e0e52;
+    font-size: 0.95em;
+    font-weight: bold;
+}
+
+/*Main index.html*/
+.main{
+    max-width: 600px;
+    height: 600px;
+    background-color: #e4e4e4;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 8px auto;
+    border-radius: 15px;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+/*inicio formulario de cadastro de tarefas*/
+form{
+    justify-self: center;
+    width: 950px;
+}
+
+
+.area1{
+    background: #1dcb177b;
+    display: flex;
+    width: 100%;
+    justify-self: center;
+    margin-top: 10px;
+    font-size: 0.9em;
+    padding: 5px;
+    border-radius: 10px;
+    border: none;
+}
+
+input#id_of{
+    width: 30%;
+    height: 30px;
+    margin: 4px;
+    text-align: center;
+    font-size: 0.9em;
+    padding: 5px;
+    border-radius: 6px;
+    border: none;
+    box-sizing: border-box;
+}
+
+.area1 input, .area1 select{
+    width: 100%;
+    min-width: 0;
+    height: 30px;
+    margin: 4px;
+    text-align: center;
+    font-size: 0.9em;
+    border-radius: 6px;
+    border: none;
+    box-sizing: border-box;
+}
+
+.area2{
+    background: #cb6b179e;
+    display: flex;
+    width: 100%;
+    justify-self: center;
+    margin-top: 5px;
+    font-size: 0.9em;
+    padding: 5px;
+    border-radius: 10px;
+    border: none;
+}
+
+.area2 input, .area2 select{
+    width: 50%;
+    min-width: 0;
+    height: 30px;
+    margin: 4px;
+    text-align: center;
+    font-size: 0.9em;
+    padding: 5px;
+    border-radius: 6px;
+    border: none;
+    box-sizing: border-box;
+}
+
+#start_date, #completion_date, #due_date{
+    display: flex;
+    width: auto;
+    margin: 2px;
+    justify-self:center;
+    font-size: 0.9em;
+    padding: 3px;
+    border-radius: 10px;
+}
+
+#priority, #status{
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: 20px;
+    margin: 2px;
+    align-items: center;
+    font-size: 0.9em;
+    padding: 2px;
+    border-radius: 10px;
+}
+
+/*Area descrever tarefas*/
+.area3{
+    background: #0318b9a8;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 80px;
+    font-size: 0.9em;
+    color: #ffffff;
+    margin-top: 5px;
+    border-radius: 10px;
+    border: none;
+}
+
+.area3 input, .area3 select {
+    font-size: 0.9em;
+    padding: 2px;
+    border-radius: 6px;
+    border: none;
+    box-sizing: border-box;
+}
+
+.area3 textarea{
+    display: flex;
+    align-self: center;
+    width: 85%;
+    height: 30px;
+    font-size: 0.9em;
+    padding: 8px;
+    text-align: flex-start;
+    border-radius: 10px;
+    border: none;
+}
+
+.area3 label {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 2px;
+    font-size: 0.9em;
+}
+
+/* Innicio area 4 Subtask*/
+.area4{
+    background: #b0a211c1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 260px;
+    margin-top: 5px;
+    font-size: 0.9em;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.area4 label {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    justify-self: flex-start;
+    font-size: 0.9em;
+    margin: 2px;
+}
+
+/*Area Subtarefas*/
+.area4 #subtask1, .area4 #subtask2, .area4 #subtask3{
+    display: flex;
+    flex-direction: column;
+    justify-self: flex-start;
+    align-items: center;
+    height: 30px;
+    margin: 4px;
+    text-align: left;
+    font-size: 0.9em;
+    border-radius: 6px;
+    border: none;
+}
+
+.submit_button{
+    width: 30%;
+}
+
+.task-row, .subtask-row{
+    font-size: 0.9em;
+    font-weight: bold;
+    color: #5a2020;
+    padding: 2px;
+    margin: 5px;
+    text-decoration: none;
+}
+/*fim formulario de cadastro de tarefas*/
+
+/*inicio login e cadastro login*/
+.login_form {  
+    display: flex;
+    justify-content: center; 
+    flex-direction: column;
+    background: #94aacd;
+    padding: 5px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(61, 61, 61, 0.07);
+    width: 180px;
+    height: 250px;
+}
+
+#submit{
+    display: flex;
+    align-self: center;
+    background: #1f4684;
+    color: #ffffff;
+    width: 90%;
+    height: 25px;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.9em;
+    font-weight: bold;
+    margin-bottom: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.link-login a{
+    display: flex;
+    justify-content: center;
+    color: #ffffff;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+
+.input-login{
+    display: flex;
+    align-self: center;
+    width: 85%;
+    height: 20px;
+    border: none;
+    border-radius: 4px;
+}
+
+/*fim login e cadastro login*/
+
+
+/*Inicio trocar senha*/
+
+.change_password {  
+    display: flex;
+    justify-content: center; 
+    flex-direction: column;
+    background: #94aacd;
+    padding: 5px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(61, 61, 61, 0.07);
+    width: 180px;
+    height: 250px;
+}
+
+.password-link a{
+    display: flex;
+    color: #ffffff;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.input-password {
+    display: flex;
+    align-self: center;
+    width: 85%;
+    height: 20px;
+    border: none;
+    border-radius: 4px;
+}
+/*Final Trocar Senha*/
+
+/*Inicio Conecte-se*/
+.register_form{   
+    display: flex;
+    justify-content: center; 
+    flex-direction: column;
+    background: #94aacd;
+    padding: 5px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(61, 61, 61, 0.07);
+    width: 180px;
+    height: 250px;
+}
+
+.register-lk a{
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    color: #ffffff;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.input-register {
+    display: flex;
+    align-self: center;
+    width: 85%;
+    height: 20px;
+    border: none;
+    border-radius: 4px;
+}
+
+.submit-register{
+    display: flex;
+    align-self: center;
+    background: #1f4684;
+    color: #ffffff;
+    width: 90%;
+    height: 25px;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.9em;
+    font-weight: bold;
+    margin-bottom: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.frase{
+    margin: 5px;
+    text-align: center;
+    color: #323232;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+/*Final conecte - se*/
+
+/* Inicio Reset Senha */ 
+.resetlogin {  
+    display: flex;
+    justify-content: center; 
+    flex-direction: column;
+    background: #94aacd;
+    padding: 5px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(61, 61, 61, 0.07);
+    width: 180px;
+    height: 200px;
+}
+
+.input-reset{
+    display: flex;
+    align-self: center;
+    width: 85%;
+    height: 20px;
+    border: none;
+    border-radius: 4px;
+}
+
+.menu_links a:hover {
+    color: #61fb63;
+}
+
+.password-link a:hover {
+    color: #61fb63;
+}
+
+a:hover {
+    color: #61fb63;
+}
+
+
+button:hover, input[type="submit"]:hover {
+    background: #cb7117;
+}
+
+.flash {
+    background: #ffeeba;
+    color: #856404;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+
+footer {
+    margin-top: 5px;
+    text-align: center;
+    font-size: 0.8em;
+    color: #529b53;
+}
+    /* Responsividade aprimorada para area3 em dispositivos móveis pequenos */
+    @media (max-width:720px) {
+        .area3 {
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 8px;
+        }
+        .area3 .select-group {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            width: 45%;
+            min-width: 100px;
+        }
+        .area3 .input-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 50%;
+            min-width: 110px;
+            margin-left: auto;
+        }
+        .area3 input, .area3 select, .area3 textarea {
+
+            align-items: center;            
+            width: 50%;
+            margin-bottom: 2px;
+        }
+
+        .area3 label {
+                align-items: center;
+                flex-grow: 2;
+        }
+    }
+
+    /* Responsividade para dispositivos móveis pequenos */
+    @media (max-width: 480px) {
+        .navbar {
+            flex-direction: column;
+            height: auto;
+            padding: 5px;
+        }
+        .main {
+            max-width:100%;
+            height: auto;
+            flex-direction: column;
+            align-items: center;
+            padding: 4px;
+            border-radius: 8px;
+        }
+        form {
+            width: 50%;
+            padding: 0 2px;
+            align-items: center;
+        }
+        .login_form, .change_password, .register_form, .resetlogin {
+            width: 95vw;
+            min-width: 0;
+            height: auto;
+            padding: 8px;
+        }
+        .area1, .area2, .area3, .area4 {
+            flex-direction: column;
+            align-items: center;
+            padding: 4px;
+            font-size: 0.85em;
+        }
+        .submit_button, .submit-register, #submit {
+            width: 100%;
+            font-size: 1em;
+        }
+        .task-table, table[type="table"] {
+            font-size: 0.8em;
+            padding: 2px;
+        }
+        .input-login, .input-register, .input-password, .input-reset {
+            width: 100%;
+            font-size: 1em;
+        }
+        header, header.view {
+            font-size: 1em;
+            padding: 6px 2px;
+        }
+        .frase {
+            font-size: 0.9em;
+        }
+    }
+

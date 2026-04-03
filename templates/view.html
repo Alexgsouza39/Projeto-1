@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- Favicons responsivos -->
+    <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='favicon.svg') }}">
+    <link rel="icon" type="image/svg+xml" sizes="32x32" href="{{ url_for('static', filename='favicon32.svg') }}">
+    <link rel="icon" type="image/svg+xml" sizes="16x16" href="{{ url_for('static', filename='favicon16.svg') }}">
+    <title>View</title>  
+    </head>
+<body>
+    <header>
+        <nav class="navbar">
+            <h1>My Tasks</h1>
+            <ul class="nav_links">
+                <li class="menu_links"><a href="{{ url_for('index') }}">New Task</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="view_tasks">
+        <div class="search-container" style="margin: 5px 0;">
+            <input type="text" id="searchInput" onkeyup="filterTable()" 
+                   placeholder="🔍 Pesquisar" 
+                   style="width: 140px; height: 19px; padding: 8px; border: 1px solid #ccc; border-radius: 8px; font-size: 12px;">
+        </div>
+
+        <table class="task-table" id="taskTable">
+            <thead class="task-header">
+                <tr class="task-row">
+                    <th>User</th>
+                    <th>Order</th>
+                    <th>Task</th>
+                    <th>ID_Num</th>
+                    <th>Objective</th>
+                    <th>Description</th>
+                    <th>Start</th>
+                    <th>Due</th>
+                    <th>Completion</th>
+                    <th>Delay</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for task in tasks %}
+                <tr class="task-row">
+                    <td>{{ task.owner.username if task.owner else 'N/A' }}</td>
+                    <td>{{ task.id_of }}</td>
+                    <td>{{ task.task }}</td>
+                    <td>{{ task.id_num }}</td>
+                    <td>{{ task.objective }}</td>
+                    <td>{{ task.description }}</td>
+                    <td>{{ task.start_date }}</td>
+                    <td>{{ task.due_date }}</td>
+                    <td>{{ task.completion_date if task.completion_date else '-' }}</td>
+                    <td>
+                        {{ task.atraso_dias if task.atraso_dias is not none else 0 }} day
+                    </td>
+                    <td>
+                        {% if not task.completion_date %}
+                            <a href="{{ url_for('done_task', task_id=task.id) }}" onclick="return confirm('Mark as completed?')">Complete</a> |
+                        {% endif %}
+                        <a href="{{ url_for('delete_task', task_id=task.id) }}" onclick="return confirm('Delete task?')">Delete</a>
+                    </td>
+                </tr>
+
+                {% if task.subtasks %}
+                    {% for sub in task.subtasks %}
+                    <tr class="subtask-row" style="background:#f9f9f9; font-size: 0.9em;">
+                        <td></td>
+                        <td style="color:#333232;">ID: {{ sub.id }}</td>
+                        <td colspan="6" style="padding-left:15px; color: #555;">Etapa:{{ sub.name }}</td>
+                        <td colspan="2">
+                            {% if sub.completion_date %}
+                                <span style="color:green;">✔ {{ sub.completion_date }}</span>
+                            {% else %}
+                                <a href="{{ url_for('done_subtask', subtask_id=sub.id) }}">Complete</a>
+                            {% endif %}
+                            | <a  href="{{ url_for('delete_subtask', subtask_id=sub.id) }}" style="color:red;">Delete</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                {% endif %}
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <script>
+    function filterTable() {
+        var input = document.getElementById("searchInput");
+        var filter = input.value.toLowerCase();
+        var table = document.getElementById("taskTable");
+        var trs = table.getElementsByTagName("tr");
+        var lastTaskRow = null;
+        var showSubtasks = false;
+        for (var i = 1; i < trs.length; i++) {
+            var tr = trs[i];
+            if (tr.classList.contains('task-row')) {
+                // Nova tarefa principal
+                lastTaskRow = tr;
+                showSubtasks = false;
+                // Verifica se a task principal bate com o filtro
+                var tds = tr.getElementsByTagName("td");
+                var taskRowVisible = false;
+                for (var j = 0; j < tds.length; j++) {
+                    if (tds[j].textContent.toLowerCase().indexOf(filter) > -1) {
+                        taskRowVisible = true;
+                        break;
+                    }
+                }
+                tr.style.display = taskRowVisible ? "" : "none";
+                showSubtasks = taskRowVisible;
+            } else if (tr.classList.contains('subtask-row')) {
+                // Subtask: verifica se bate com o filtro
+                var tds = tr.getElementsByTagName("td");
+                var subtaskVisible = false;
+                for (var j = 0; j < tds.length; j++) {
+                    if (tds[j].textContent.toLowerCase().indexOf(filter) > -1) {
+                        subtaskVisible = true;
+                        break;
+                    }
+                }
+                // Se a subtask bateu, mostra ela e a task principal
+                if (subtaskVisible && lastTaskRow) {
+                    lastTaskRow.style.display = "";
+                    tr.style.display = "";
+                    showSubtasks = true;
+                } else {
+                    tr.style.display = showSubtasks ? "" : "none";
+                }
+            }
+        }
+    }
+    </script>
+</body>
+</html>
