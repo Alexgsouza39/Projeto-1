@@ -1,0 +1,80 @@
+# ----------------------------------------------------------------------
+# ITENS GERAIS DO SISTEMA/USUÁRIO (ALTAMENTE RECOMENDADO IGNORAR)
+# O Git deve ser usado APENAS para arquivos de PROJETO.
+# ----------------------------------------------------------------------
+
+# Arquivos de configurações de usuário (Windows)
+NTUSER.DAT
+NTUSER.DAT{d006800d-cbd8-11ef-b94a-d9f0b353b9fa}.TM.blf
+NTUSER.DAT{d006800d-cbd8-11ef-b94a-d9f0b353b9fa}.TMContainer00000000000000000001.regtrans-ms
+NTUSER.DAT{d006800d-cbd8-11ef-b94a-d9f0b353b9fa}.TMContainer00000000000000000002.regtrans-ms
+ntuser.dat.LOG1
+ntuser.dat.LOG2
+ntuser.ini
+
+# Diretórios de usuário padrão (Windows)
+3D Objects/
+Contacts/
+Documents/
+Downloads/
+Favorites/
+Links/
+Music/
+Saved Games/
+Searches/
+Videos/
+AppData/
+OneDrive/
+
+# Configurações e logs pessoais
+.bash_history
+.gitconfig
+
+# ----------------------------------------------------------------------
+# FERRAMENTAS E AMBIENTES DE DESENVOLVIMENTO
+# ----------------------------------------------------------------------
+
+# Anaconda / Python
+.vscode/
+.anaconda/
+.conda/
+.continuum/
+.gemini/
+.cache/
+.codex/
+anaconda3/
+anaconda_projects/
+Arquivos_py
+
+#Copilot
+.copilot/
+
+# Editores / IDEs
+.idlerc/
+.vscode/
+
+# Outros
+Oracle/
+WPS Cloud Files/
+Configura\303\247\303\265es Locais/
+Cookies/
+Dados de Aplicativos/
+Menu Iniciar/
+Meus Documentos/
+Modelos/
+Recent/
+SendTo/
+condarc
+ipynb_checkpoints/Teste-checkpoint.ipynb
+ipynb_checkpoints/Untitled-checkpoint.ipynb
+ipython/profile_default/history.sqlite
+ipython/profile_default/startup/README
+Sti_Trace.log
+Teste.ipynb
+Untitled.ipynb
+.condarc
+.ipynb_checkpoints/
+.ipython/
+.lesshst
+
+
