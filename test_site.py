@@ -65,6 +65,3 @@ class SiteTestCase(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
-    import os
-    os.system('venv\\Scripts\\activate')
-    os.system('pip install Flask-WTF')

@@ -45,7 +45,7 @@ header {
 .view_tasks{
     margin: 2px;
     background: #01014b;
-    border-radius: 8px;
+    border-radius: 10px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.07);
     padding: 10px 6px;
 }
@@ -109,6 +109,15 @@ tr[style*="background:#f7f7f7"] {
 
 
 span[style*="color:green"] {
+    font-weight: bold;
+}
+
+.subtask-row{
+    background-color: #ffff;
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+    font-size: 0.9em;
     font-weight: bold;
 }
 

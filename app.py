@@ -5,6 +5,7 @@ from flask_wtf import CSRFProtect
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
 import os
+import re
 
 
 
@@ -171,7 +172,6 @@ def index():
     if 'user_id' not in session: return redirect(url_for('login'))
     form = TaskForm()
     if form.validate_on_submit():
-        import re
         prefix = form.id_of.data.upper()
         # Busca IDs existentes com mesmo prefixo
         existing = Task.query.filter(Task.id_of.like(f'{prefix}%')).all()

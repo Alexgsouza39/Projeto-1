@@ -66,8 +66,7 @@
                         {{ form.description.label }}<br>
                         {{ form.description(style='resize:vertical; word-break:break-word; white-space:pre-wrap;') }}<br>
                     </div>
-                    <section>
-                    <div class="area4">
+                    <section class="area4">
                         <div>
                             {{ form.subtask1.label }}
                             {{ form.subtask1(rows=4, cols=30, style='resize:vertical; width:80%; word-break:break-word; white-space:pre-wrap;') }}<br>
@@ -79,17 +78,17 @@
                         <div>
                             {{ form.subtask3.label }}
                             {{ form.subtask3(rows=4, cols=30, style='resize:vertical; width:80%; word-break:break-word; white-space:pre-wrap;') }}<br>
-                        <div class="submit_button">
-                            {{ form.submit() }}
+                            <div class="submit_button">
+                                {{ form.submit() }}
+                            </div>
                         </div>
-                        </div>
-                    </div>
+                    </section>
                 </form>
-            </section>
         </main>
         <footer>
             <small>
                 <p>Task Management System todos direitos reservados ao proprietario</p>
             </small>
         </footer>
+    </body>
 </html>

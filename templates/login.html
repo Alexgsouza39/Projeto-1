@@ -12,15 +12,15 @@
     <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='favicon.svg') }}">
     <link rel="icon" type="image/svg+xml" sizes="32x32" href="{{ url_for('static', filename='favicon32.svg') }}">
     <link rel="icon" type="image/svg+xml" sizes="16x16" href="{{ url_for('static', filename='favicon16.svg') }}">
-</head>
     <title>Login</title> 
+</head>
+<body>
     <header>
           <nav class="navbar">
             <h1>Login</h1>
             <a href="{{ url_for('reset_password') }}">Esqueci minha senha</a>
           </nav>
     </header>
-<body>
     <form class="login_form" method="POST">
       {{ form.hidden_tag() }}
       {{ form.username.label }}<br>

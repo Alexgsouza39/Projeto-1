@@ -72,10 +72,10 @@
 
                 {% if task.subtasks %}
                     {% for sub in task.subtasks %}
-                    <tr class="subtask-row" style="background:#f9f9f9; font-size: 0.9em;">
+                    <tr class="subtask-row">
                         <td></td>
                         <td style="color:#333232;">ID: {{ sub.id }}</td>
-                        <td colspan="6" style="padding-left:15px; color: #555;">Etapa:{{ sub.name }}</td>
+                        <td colspan="7" style="padding-left:15px; color: #555;">Etapa:{{ sub.name }}</td>
                         <td colspan="2">
                             {% if sub.completion_date %}
                                 <span style="color:green;">✔ {{ sub.completion_date }}</span>

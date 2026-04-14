@@ -1,6 +1,7 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SelectField, DateField, IntegerField, SubmitField, TextAreaField
 from wtforms.validators import DataRequired, Length, EqualTo, ValidationError, Optional
+import re
 
 class RegisterForm(FlaskForm):
     username = StringField('Username', validators=[DataRequired(), Length(min=3, max=150)])
@@ -20,7 +21,6 @@ class ChangePasswordForm(FlaskForm):
 
 class TaskForm(FlaskForm):
     def validate_id_of(self, field):
-        import re
         value = field.data
         # Validação: apenas 3 letras
         if not re.match(r'^[A-Za-z]{3}$', value):
