@@ -19,6 +19,11 @@ class ChangePasswordForm(FlaskForm):
     new_password = PasswordField('Nova senha', validators=[DataRequired(), Length(min=6)])
     submit = SubmitField('Alterar Senha')
 
+class ResetPasswordForm(FlaskForm):
+    username = StringField('Username', validators=[DataRequired()])
+    new_password = PasswordField('Nova senha', validators=[DataRequired(), Length(min=6)])
+    submit = SubmitField('Redefinir Senha')
+
 class TaskForm(FlaskForm):
     def validate_id_of(self, field):
         value = field.data

@@ -1,6 +1,6 @@
 from datetime import datetime, timedelta
 from flask import Flask, render_template, request, redirect, url_for, session, flash, send_from_directory
-from forms import RegisterForm, LoginForm, ChangePasswordForm, TaskForm
+from forms import RegisterForm, LoginForm, ChangePasswordForm, TaskForm, ResetPasswordForm
 from flask_wtf import CSRFProtect
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -10,7 +10,7 @@ import re
 
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'sua_chave_secreta_aqui'  # Troque por uma chave forte em produção
+app.config['SECRET_KEY'] = '#Ags@1984?'  # Troque por uma chave forte em produção
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(minutes=30)
@@ -145,9 +145,7 @@ def change_password():
 
 @app.route('/reset_password', methods=['GET', 'POST'])
 def reset_password():
-    form = ChangePasswordForm()
-    # Remove campo de senha antiga do formulário (ignorar no template)
-    form.old_password.render_kw = {'style': 'display:none;'}
+    form = ResetPasswordForm()
     if form.validate_on_submit():
         username = form.username.data
         new_pw = form.new_password.data

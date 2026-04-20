@@ -18,7 +18,10 @@
     <header>
           <nav class="navbar">
             <h1>Login</h1>
-            <a href="{{ url_for('reset_password') }}">Esqueci minha senha</a>
+            <ul>
+              <a href="{{ url_for('reset_password') }}"><strong>Esqueci minha senha</strong></a>
+              <a href="{{ url_for('change_password') }}"><strong>Trocar senha</strong></a>
+            </ul>
           </nav>
     </header>
     <form class="login_form" method="POST">
@@ -30,10 +33,11 @@
       {{ form.submit() }}
       <div>
         <div class="link-login">
-         <a href="{{ url_for('change_password') }}">Trocar senha</a>
+         
         </div>
         <div class="link-login">
-         <a href="{{ url_for('register') }}">Conecte-se</a>
+          <p class="frase">Primeiro acesso?</p>
+         <a href="{{ url_for('register') }}"><strong>Novo usuário</strong></a>
         </div>
      </div>
     </form>
