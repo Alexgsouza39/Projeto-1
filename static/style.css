@@ -551,29 +551,50 @@ button:hover, input[type="submit"]:hover {
 footer {
     margin-top: 5px;
     text-align: center;
-    font-size: 0.8em;
+    font-size: 0.9em;
     color: #529b53;
 }
     /* Responsividade aprimorada para area3 em dispositivos móveis pequenos */
-    @media (max-width:720px) {
-        .area3 {
-            flex-direction: row;
+    @media (max-width:680px) {
+
+         .body{
+            width: 100%;
+        }
+
+       .main{
+        max-width: 500px;
+        height: 500px;
+        background-color: #eae5e5;
+        display: flex;
+        flex-direction: column;
+        justify-self: center;    
+        align-items: center;
+        border-radius: 15px;
+        padding: 8px;
+    }
+
+        .area1, .area2, .area3, .area4 {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
             flex-wrap: wrap;
             align-items: center;
             gap: 8px;
         }
-        .area3 .select-group {
+        .area1, .area2, .area3, .area4, .select-group {
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
+            flex-wrap: wrap;
             align-items: center;
-            width: 45%;
-            min-width: 100px;
+            width: 60%;
+
         }
-        .area3 .input-group {
+        .area1, .area2, .area3, .area4, .input-group {
             display: flex;
             flex-direction: column;
             align-items: center;
-            width: 50%;
+            width: 30%;
             min-width: 110px;
             margin-left: auto;
         }
@@ -585,20 +606,28 @@ footer {
         }
 
         .area3 label {
-                align-items: center;
-                flex-grow: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            flex-grow: 2;
         }
     }
 
     /* Responsividade para dispositivos móveis pequenos */
-    @media (max-width: 480px) {
+    @media (max-width: 380px) {
+
+        .body{
+
+            width: 100%;
+        }
         .navbar {
-            flex-direction: column;
+            width: 100%;
             height: auto;
             padding: 5px;
         }
         .main {
-            max-width:100%;
+            max-width:380px;
             height: auto;
             flex-direction: column;
             align-items: center;
@@ -617,6 +646,8 @@ footer {
             padding: 8px;
         }
         .area1, .area2, .area3, .area4 {
+            width: 100%;
+            display: flex;;
             flex-direction: column;
             align-items: center;
             padding: 4px;
@@ -635,6 +666,7 @@ footer {
             font-size: 1em;
         }
         header, header.view {
+            width: 100%;
             font-size: 1em;
             padding: 6px 2px;
         }
