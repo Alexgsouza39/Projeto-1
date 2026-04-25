@@ -338,6 +338,7 @@ input#id_of{
 .login_form {  
     display: flex;
     justify-content: center; 
+    align-items: center;
     flex-direction: column;
     background: #94aacd;
     padding: 8px;
@@ -399,15 +400,16 @@ input#id_of{
 .change_password {  
     display: flex;
     justify-content: center; 
+    align-items: center;
     flex-direction: column;
     background: #94aacd;
     padding: 8px;
     border: none;
     border-radius: 8px;
     box-shadow: 0 2px 10px #042b6b;
-    width: 200px;
-    height: 250px;
     margin-top: 50px;
+    width: 200px;
+    height: 260px;
 }
 
 .password-link a{
@@ -435,15 +437,16 @@ input#id_of{
 .register_form{   
     display: flex;
     justify-content: center; 
+    align-items: center;
     flex-direction: column;
     background: #94aacd;
     padding: 8px;
     border: none;
     border-radius: 8px;
     box-shadow: 0 2px 10px #042b6b;
-    width: 200px;
-    height: 250px;
     margin-top: 50px;
+    width: 200px;
+    height: 260px;
 }
 
 .register-lk a{
@@ -501,24 +504,30 @@ input#id_of{
 .resetlogin {  
     display: flex;
     justify-content: center; 
+    align-items: center;
     flex-direction: column;
     background: #94aacd;
-    padding: 5px;
+    padding: 8px;
     border: none;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(61, 61, 61, 0.07);
-    width: 180px;
-    height: 200px;
+    box-shadow: 0 2px 10px #042b6b;
+    margin-top: 50px;
+    width: 200px;
+    height: 260px;
 }
 
 .input-reset{
+    display: flex;
     flex-direction: row;
     align-self: center;
     text-align: center;
-    width: 85%;
-    height: 20px;
+    width: 90%;
+    height: 25px;
+    padding: 2px;
     border: none;
-    border-radius: 4px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px #042b6b;
+    font-size: 1em;
 }
 
 .menu_links a:hover {
@@ -554,124 +563,73 @@ footer {
     font-size: 0.9em;
     color: #529b53;
 }
-    /* Responsividade aprimorada para area3 em dispositivos móveis pequenos */
-    @media (max-width:680px) {
-
-         .body{
-            width: 100%;
-        }
-
-       .main{
-        max-width: 500px;
-        height: 500px;
-        background-color: #eae5e5;
-        display: flex;
-        flex-direction: column;
-        justify-self: center;    
-        align-items: center;
-        border-radius: 15px;
-        padding: 8px;
-    }
-
-        .area1, .area2, .area3, .area4 {
-            width: 50%;
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 8px;
-        }
-        .area1, .area2, .area3, .area4, .select-group {
-            display: flex;
-            flex-direction: column;
-            flex-wrap: wrap;
-            align-items: center;
-            width: 60%;
-
-        }
-        .area1, .area2, .area3, .area4, .input-group {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 30%;
-            min-width: 110px;
-            margin-left: auto;
-        }
-        .area3 input, .area3 select, .area3 textarea {
-
-            align-items: center;            
-            width: 50%;
-            margin-bottom: 2px;
-        }
-
-        .area3 label {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 100%;
-            flex-grow: 2;
-        }
-    }
-
-    /* Responsividade para dispositivos móveis pequenos */
-    @media (max-width: 380px) {
-
-        .body{
-
-            width: 100%;
-        }
+    /* Responsividade para Tablets e Mobile (Geral) */
+    @media (max-width: 768px) {
         .navbar {
-            width: 100%;
+            flex-direction: column;
             height: auto;
-            padding: 5px;
+            padding: 10px;
+            text-align: center;
         }
+
         .main {
-            max-width:380px;
-            height: auto;
-            flex-direction: column;
-            align-items: center;
-            padding: 4px;
-            border-radius: 8px;
+            width: 95%;
+            height: auto; /* Permite que o container cresça com o conteúdo empilhado */
+            padding: 15px;
+            margin: 10px auto;
         }
+
         form {
-            width: 50%;
-            padding: 0 2px;
-            align-items: center;
-        }
-        .login_form, .change_password, .register_form, .resetlogin {
-            width: 95vw;
-            min-width: 0;
-            height: auto;
-            padding: 8px;
-        }
-        .area1, .area2, .area3, .area4 {
             width: 100%;
-            display: flex;;
+            display: flex;
             flex-direction: column;
-            align-items: center;
-            padding: 4px;
-            font-size: 0.85em;
         }
+
+        .area1, .area2, .area3, .area4 {
+            flex-direction: column;
+            width: 100%;
+            height: auto;
+            padding: 15px;
+            gap: 10px;
+            align-items: stretch;
+        }
+
+        .area1 input, .area1 select,
+        .area2 input, .area2 select,
+        #id_of, #start_date, #completion_date, #due_date,
+        #priority, #status, .area3 textarea,
+        .area4 #subtask1, .area4 #subtask2, .area4 #subtask3 {
+            width: 100% !important;
+            margin: 5px 0;
+        }
+
+        .login_form, .change_password, .register_form, .resetlogin {
+            width: 90vw;
+            height: auto;
+            margin-top: 20px;
+        }
+
+        .view_tasks {
+            overflow-x: auto; /* Permite scroll lateral na tabela em telas pequenas */
+        }
+
+        .task-table {
+            min-width: 600px;
+        }
+    }
+
+    /* Ajustes específicos para smartphones pequenos */
+    @media (max-width: 480px) {
+        h1 {
+            font-size: 1.3em;
+            text-align: center;
+        }
+
         .submit_button, .submit-register, #submit {
             width: 100%;
-            font-size: 1em;
         }
-        .task-table, table[type="table"] {
-            font-size: 0.8em;
-            padding: 2px;
-        }
-        .input-login, .input-register, .input-password, .input-reset {
-            width: 100%;
-            font-size: 1em;
-        }
-        header, header.view {
-            width: 100%;
-            font-size: 1em;
-            padding: 6px 2px;
-        }
+
         .frase {
-            font-size: 0.9em;
+            font-size: 0.85em;
         }
     }
-
