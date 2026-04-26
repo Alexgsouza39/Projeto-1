@@ -143,7 +143,7 @@ label {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin: 8px auto;
+    margin:6px auto;
     border-radius: 15px;
     padding: 8px;
 }
@@ -159,7 +159,7 @@ form{
     display: flex;
     width: 100%;
     justify-self: center;
-    margin-top: 15px;
+    margin-top:12px;
     font-size: 1em;
     padding: 5px;
     border-radius: 10px;
@@ -580,7 +580,7 @@ footer {
             justify-content: center;
             align-self: center;
             height: auto;
-            font-size: 1.1em;
+            font-size: 0.95em;
             
         }
 
@@ -597,16 +597,27 @@ footer {
             flex-direction: column;
         }
 
-        .area1, .area2, .area3, .area4 {
+        .area1, .area2, .area3{
+            display: flex;
             flex-direction: column;
             align-items: center;
             width: 100%;
+        }
+
+        .area4 label{
+            flex-direction: column;
+            align-items: center;
+            height: auto !important;
+            margin: 2px;
+            text-align: center;
+            
         }
 
         label{
             flex-direction: column;
             align-items: center;
             height: auto !important;
+            margin: 2px;
             text-align: center;
         }
         
@@ -617,23 +628,29 @@ footer {
             height: 30%;
             align-self: center;
             text-align: center;
+            margin: 2px;
         }
 
         #id_of{
             width: 30% !important;
         }
 
-        .area3 textarea,
-        .area4 textarea{
+        .area3 textarea{
             width: 90% !important;
-            height: 30px!important;
+            height:40px!important;
         }
 
-        #start_date, #completion_date, #due_date,
-        #priority, #status{
+        #start_date,  #status, #completion_date, #due_date,
+        #priority {
+            width: 50%!important;
             width: auto;
             height: 100px;
             align-self: center;
+        }
+
+        .area4 #subtask1, .area4 #subtask2, .area4 #subtask3{
+            width: 90% !important;
+            height:40px!important;
         }
 
         .login_form, .change_password, .register_form, .resetlogin {
@@ -645,8 +662,9 @@ footer {
         .submit_button {
             display: flex;
             flex-direction: column;
-            width: 80% !important;
+            width: 90%;
             height: 45px !important;
+            margin-top: 5px;
             justify-content: center;
         }
 
