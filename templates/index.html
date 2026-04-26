@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,14 +12,14 @@
     <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='favicon.svg') }}">
     <link rel="icon" type="image/svg+xml" sizes="32x32" href="{{ url_for('static', filename='favicon32.svg') }}">
     <link rel="icon" type="image/svg+xml" sizes="16x16" href="{{ url_for('static', filename='favicon16.svg') }}">
-    <title>Tasks</title>     
+    <title>Tarefas</title>   
 </head>
     <body>
         <header>
             <nav class="navbar">
-                <h1>Tasks</h1>
+                <h1>Tarefas</h1>
                 <ul class="nav_links">
-                    <li class="menu_links"><a href="{{ url_for('view_tasks') }}">View Tasks</a></li>
+                    <li class="menu_links"><a href="{{ url_for('view_tasks') }}">Visualizar</a></li>
                     <li class="menu_links"><a href="{{ url_for('logout') }}">Sair</a></li>
                 </ul>
             </nav>
@@ -38,46 +38,46 @@
                 <form action="/" method="post">
                     {{ form.hidden_tag() }}
                     <div class="area1">
-                        {{ form.id_of.label}}<br>
-                        {{ form.id_of() }}<br>
-                        {{ form.task.label }}<br>
-                        {{ form.task() }}<br>
-                        {{ form.segment.label }}<br>
-                        {{ form.segment() }}<br>
-                        {{ form.area.label}}<br>
-                        {{ form.area() }}<br>
-                        {{ form.objective.label }}<br>
-                        {{ form.objective() }}<br>
+                        {{ form.id_of.label}}
+                        {{ form.id_of() }}
+                        {{ form.task.label }}
+                        {{ form.task() }}
+                        {{ form.segment.label }}
+                        {{ form.segment() }}
+                        {{ form.area.label}}
+                        {{ form.area() }}
+                        {{ form.objective.label }}
+                        {{ form.objective() }}
                     </div> 
                     <div class="area2">
-                        {{ form.start_date.label }}<br>
-                        {{ form.start_date() }}<br>
-                        {{ form.due_date.label }}<br>
-                        {{ form.due_date() }}<br>
-                        {{ form.completion_date.label }}<br>
-                        {{ form.completion_date() }}<br>
-                        {{ form.priority.label }}<br>
-                        {{ form.priority() }}<br>
-                        {{ form.status.label }}<br>
-                        {{ form.status() }}<br>
+                        {{ form.start_date.label }}
+                        {{ form.start_date() }}
+                        {{ form.due_date.label }}
+                        {{ form.due_date() }}
+                        {{ form.completion_date.label }}
+                        {{ form.completion_date() }}
+                        {{ form.priority.label }}
+                        {{ form.priority() }}
+                        {{ form.status.label }}
+                        {{ form.status() }}
                     </div>
 
                     <div class="area3">                        
-                        {{ form.description.label }}<br>
-                        {{ form.description(style='resize:vertical; word-break:break-word; white-space:pre-wrap;') }}<br>
+                        {{ form.description.label }}
+                        {{ form.description() }}
                     </div>
                     <section class="area4">
                         <div>
                             {{ form.subtask1.label }}
-                            {{ form.subtask1(rows=4, cols=30, style='resize:vertical; width:80%; word-break:break-word; white-space:pre-wrap;') }}<br>
+                            {{ form.subtask1() }}
                         </div>
                         <div>
                             {{ form.subtask2.label }}
-                            {{ form.subtask2(rows=4, cols=30, style='resize:vertical; width:80%; word-break:break-word; white-space:pre-wrap;') }}<br>
+                            {{ form.subtask2() }}
                         </div>
                         <div>
                             {{ form.subtask3.label }}
-                            {{ form.subtask3(rows=4, cols=30, style='resize:vertical; width:80%; word-break:break-word; white-space:pre-wrap;') }}<br>
+                            {{ form.subtask3() }}
                             <div class="submit_button">
                                 {{ form.submit() }}
                             </div>
