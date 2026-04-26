@@ -10,7 +10,7 @@ import re
 
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = '#Ags@1984?'  # Troque por uma chave forte em produção
+app.config['SECRET_KEY'] = 'Meu_App_Secreto'  # Troque por uma chave forte em produção
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(minutes=30)
