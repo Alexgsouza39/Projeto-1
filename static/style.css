@@ -267,8 +267,10 @@ form{
 .area3 textarea{
     width: 90%;
     height: 50px;
+    font-size: 1em;
+    padding: 6px;
     align-self: center;
-    margin: 6px auto;
+    margin: 6px 2px;
     border: none;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.30);
@@ -314,6 +316,7 @@ form{
     width: 90%;
     height: 30px;
     margin: 4px;
+    padding: 6px;
     text-align: left;
     font-size: 1em;
     border-radius: 6px;
@@ -323,7 +326,7 @@ form{
 .submit_button{
     margin-left: 3px;
     font-size: 1em;
-    width: 40%;
+    width: 60%;
     height: 80px;
     border-radius: 10px;
 }
@@ -587,7 +590,7 @@ footer {
         }
 
         form {
-            max-width: 70%;
+            max-width: 60%;
             height: auto;
             display: flex;
             flex-direction: column;
@@ -638,8 +641,7 @@ footer {
 
         #start_date,  #status, #completion_date, #due_date,
         #priority {
-            width: 50%!important;
-            width: auto;
+            width: 30%!important;
             height: 100px;
             align-self: center;
         }
@@ -658,7 +660,7 @@ footer {
         .submit_button {
             display: flex;
             flex-direction: column;
-            width: 90%;
+            width: 60%;
             height: 45px !important;
             margin-top: 5px;
             justify-content: center;
