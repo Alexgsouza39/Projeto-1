@@ -35,8 +35,7 @@ class SiteTestCase(unittest.TestCase):
         rv = self.register('user1', 'senha123')
         self.assertIn(b'Cadastro realizado', rv.data, msg='Erro ao registrar usuário')
         rv = self.login('user1', 'senha123')
-        # Alterado de 'Tasks' para 'Save Task' (que existe no seu botão) ou 'tarefas'
-        self.assertIn(b'Save Task', rv.data, msg='Erro ao fazer login: Texto esperado não encontrado')
+        self.assertIn(b'Salvar', rv.data, msg='Erro ao fazer login: Texto esperado não encontrado')
 
     def test_create_task(self):
         self.register('user2', 'senha123')
@@ -56,11 +55,9 @@ class SiteTestCase(unittest.TestCase):
             'subtask1': '',
             'subtask2': '',
             'subtask3': '',
-            'submit': 'Save Task'
+            'submit': 'Salvar'
         }, follow_redirects=True)
-        # Verifique se a sua view.html realmente contém "My Tasks". 
-        # Se o sistema for em português, talvez deva ser 'tarefas' ou 'Status'.
-        self.assertIn(b'Order', rv.data, msg='Erro ao criar tarefa: Redirecionamento para visualização falhou')
+        self.assertIn(b'OF', rv.data, msg='Erro ao criar tarefa: Redirecionamento para visualização falhou')
 
     def test_view_tasks_requires_login(self):
         rv = self.app.get('/view', follow_redirects=True)
