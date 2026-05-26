@@ -19,8 +19,8 @@
           <nav class="navbar">
             <h1>Login</h1>
             <ul>
-              <a href="{{ url_for('reset_password') }}"><strong>Esqueci minha senha</strong></a>
-              <a href="{{ url_for('change_password') }}"><strong>Trocar senha</strong></a>
+              <a href="{{ url_for('auth.reset_password') }}"><strong>Esqueci minha senha</strong></a>
+              <a href="{{ url_for('auth.change_password') }}"><strong>Trocar senha</strong></a>
             </ul>
           </nav>
     </header>
@@ -37,7 +37,7 @@
         </div>
         <div class="link-login">
           <p class="frase">Primeiro acesso?</p>
-         <a href="{{ url_for('register') }}"><strong>Novo usuário</strong></a>
+         <a href="{{ url_for('auth.register') }}"><strong>Novo usuário</strong></a>
         </div>
      </div>
     </form>

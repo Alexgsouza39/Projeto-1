@@ -19,8 +19,8 @@
             <nav class="navbar">
                 <h1>Tarefas</h1>
                 <ul class="nav_links">
-                    <li class="menu_links"><a href="{{ url_for('view_tasks') }}">Visualizar</a></li>
-                    <li class="menu_links"><a href="{{ url_for('logout') }}">Sair</a></li>
+                    <li class="menu_links"><a href="{{ url_for('tasks.view_tasks') }}">Visualizar</a></li>
+                    <li class="menu_links"><a href="{{ url_for('auth.logout') }}">Sair</a></li>
                 </ul>
             </nav>
         </header>

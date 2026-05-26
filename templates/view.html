@@ -19,7 +19,7 @@
         <nav class="navbar">
             <h1>Atividades</h1>
             <ul class="nav_links">
-                <li class="menu_links"><a href="{{ url_for('index') }}">Nova Tarefa</a></li>
+                <li class="menu_links"><a href="{{ url_for('tasks.index') }}">Nova Tarefa</a></li>
             </ul>
         </nav>
     </header>
@@ -64,9 +64,9 @@
                     </td>
                     <td>
                         {% if not task.completion_date %}
-                            <a href="{{ url_for('done_task', task_id=task.id) }}" onclick="return confirm('Mark as completed?')">Complete</a> |
+                            <a href="{{ url_for('tasks.done_task', task_id=task.id) }}" onclick="return confirm('Mark as completed?')">Complete</a> |
                         {% endif %}
-                        <a href="{{ url_for('delete_task', task_id=task.id) }}" onclick="return confirm('Delete task?')">Delete</a>
+                        <a href="{{ url_for('tasks.delete_task', task_id=task.id) }}" onclick="return confirm('Delete task?')">Delete</a>
                     </td>
                 </tr>
 
@@ -80,9 +80,9 @@
                             {% if sub.completion_date %}
                                 <span style="color:green;">✔ {{ sub.completion_date }}</span>
                             {% else %}
-                                <a href="{{ url_for('done_subtask', subtask_id=sub.id) }}">Complete</a>
+                                <a href="{{ url_for('tasks.done_subtask', subtask_id=sub.id) }}">Complete</a>
                             {% endif %}
-                            | <a  href="{{ url_for('delete_subtask', subtask_id=sub.id) }}" style="color:red;">Delete</a>
+                            | <a  href="{{ url_for('tasks.delete_subtask', subtask_id=sub.id) }}" style="color:red;">Delete</a>
                         </td>
                     </tr>
                     {% endfor %}

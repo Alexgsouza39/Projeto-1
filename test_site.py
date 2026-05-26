@@ -1,31 +1,33 @@
 import unittest
-from app import app, db, User, Task
+from app import create_app
+from models import db
+from models.user import User
+from models.task import Task
 from flask import url_for
 import datetime
 
 class SiteTestCase(unittest.TestCase):
     def setUp(self):
-        app.config['TESTING'] = True
-        app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///:memory:'
-        app.config['WTF_CSRF_ENABLED'] = False
-        self.app = app.test_client()
-        with app.app_context():
+        self.app = create_app('testing')
+        self.app.config['WTF_CSRF_ENABLED'] = False
+        self.client = self.app.test_client()
+        with self.app.app_context():
             db.create_all()
 
     def tearDown(self):
-        with app.app_context():
+        with self.app.app_context():
             db.session.remove()
             db.drop_all()
 
     def register(self, username, password):
-        return self.app.post('/register', data=dict(
+        return self.client.post('/register', data=dict(
             username=username,
             password=password,
             submit='Register'
         ), follow_redirects=True)
 
     def login(self, username, password):
-        return self.app.post('/login', data=dict(
+        return self.client.post('/login', data=dict(
             username=username,
             password=password,
             submit='Login'
@@ -40,7 +42,7 @@ class SiteTestCase(unittest.TestCase):
     def test_create_task(self):
         self.register('user2', 'senha123')
         self.login('user2', 'senha123')
-        rv = self.app.post('/', data={
+        rv = self.client.post('/', data={
             'id_of': 'ORD',  # Corrigido para 3 caracteres
             'task': 'T1',
             'segment': 'S1',
@@ -60,7 +62,7 @@ class SiteTestCase(unittest.TestCase):
         self.assertIn(b'OF', rv.data, msg='Erro ao criar tarefa: Redirecionamento para visualização falhou')
 
     def test_view_tasks_requires_login(self):
-        rv = self.app.get('/view', follow_redirects=True)
+        rv = self.client.get('/view', follow_redirects=True)
         self.assertIn(b'Login', rv.data, msg='Acesso a /view sem login não redireciona')
 
 if __name__ == '__main__':
