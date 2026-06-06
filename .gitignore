@@ -1,7 +1,66 @@
-# ----------------------------------------------------------------------
+# ======================================================================
+# SEGREDO E CONFIGURAÇÃO (PROJETO - NUNCA COMMITAR)
+# ======================================================================
+
+# Variáveis de ambiente com secrets
+.env
+.env.local
+.env.*.local
+
+# Banco de dados SQLite e arquivos de instância
+*.db
+*.sqlite
+*.sqlite3
+instance/
+
+# Cache Python e compilados
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# IDE e editores
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Testing e coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Logs
+logs/
+*.log
+
+# ======================================================================
 # ITENS GERAIS DO SISTEMA/USUÁRIO (ALTAMENTE RECOMENDADO IGNORAR)
 # O Git deve ser usado APENAS para arquivos de PROJETO.
-# ----------------------------------------------------------------------
+# ======================================================================
 
 # Arquivos de configurações de usuário (Windows)
 NTUSER.DAT

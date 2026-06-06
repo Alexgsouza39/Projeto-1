@@ -1,8 +1,16 @@
+# Flask Framework Core
 Flask==3.1.2
 Flask-WTF==1.2.2
 Flask-SQLAlchemy==3.1.1
 WTForms==3.2.1
+
+# Database ORM
 SQLAlchemy==2.0.45
+
+# Segurança e Ambiente
+python-dotenv==1.0.0  # Gerenciar variáveis de ambiente
+
+# Dependências do Flask
 Werkzeug==3.1.4
 Jinja2==3.1.6
 MarkupSafe==3.0.3
@@ -12,3 +20,11 @@ blinker==1.9.0
 greenlet==3.3.0
 colorama==0.4.6
 typing_extensions==4.15.0
+
+# Desenvolvimento
+pytest==7.4.0  # Framework de testes
+pytest-cov==4.1.0  # Cobertura de testes
+
+# Produção (opcional)
+# gunicorn==21.2.0  # Servidor WSGI para produção
+# psycopg2-binary==2.9.7  # Driver PostgreSQL (descomentar se usar PostgreSQL)
