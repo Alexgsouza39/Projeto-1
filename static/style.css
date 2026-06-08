@@ -131,7 +131,7 @@ label {
     text-justify: center;
     color: rgba(0,0,0,0.7);
     font-weight: bold;
-    font-size: 1.1em;
+    font-size: 0.9em;
     font-weight: bold;
 }
 
@@ -161,7 +161,7 @@ form{
     width: 100%;
     justify-self: center;
     margin-top:12px;
-    font-size: 1em;
+    font-size: 0.8em;
     padding: 5px;
     border-radius: 10px;
     border: none;
@@ -172,7 +172,7 @@ form{
     height:30px;
     margin: 4px;
     text-align: center;
-    font-size: 1em;
+    font-size: 0.7em;
     padding: 5px;
     border-radius: 6px;
     border: none;
@@ -185,7 +185,7 @@ form{
     height:30px;
     margin: 4px;
     text-align: center;
-    font-size: 1em;
+    font-size: 0.8em;
     border-radius: 6px;
     border: none;
     box-shadow: 0 4px 12px rgba(0,0,0,0.30);
@@ -197,7 +197,7 @@ form{
     width: 100%;
     justify-self: center;
     margin-top: 15px;
-    font-size: 1em;
+    font-size: 0.9em;
     padding: 5px;
     border-radius: 10px;
     border: none;
@@ -210,7 +210,7 @@ form{
     height: 30px;
     margin: 4px;
     text-align: center;
-    font-size: 1em;
+    font-size: 0.9em;
     border-radius: 6px;
     border: none;
     box-shadow: 0 4px 12px rgba(0,0,0,0.30);
@@ -218,11 +218,11 @@ form{
 
 #start_date, #completion_date, #due_date{
     flex: 1;
-    width: 100%;
+    width: auto;
     height:30px;
     margin: 4px;
     text-align: center;
-    font-size: 1em;
+    font-size: 0.7em;
     border-radius: 6px;
     border: none;
     box-shadow: 0 4px 12px rgba(0,0,0,0.30);
@@ -230,14 +230,14 @@ form{
 
 #priority, #status{
     flex: 1;
-    width:100%;
+    width:auto;
     height:30px;
     margin: 4px;
     text-align: center;
-    font-size: 1em;
+    font-size: 0.7em;
     border-radius: 6px;
     border: none;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.30);
+    box-shadow: 0 4px 12px rgba(82, 77, 77, 0.3);
 }
 
 /*Area descrever tarefas*/
@@ -246,8 +246,8 @@ form{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 100px;
-    font-size:1em;
+    height: 150px;
+    font-size:0.9em;
     font-weight: bold;
     color: #ffffff;
     margin-top: 20px;
@@ -257,7 +257,7 @@ form{
 }
 
 .area3 input, .area3 select {
-    font-size: 1em;
+    font-size: 0.9em;
     padding: 2px;
     border-radius: 10px;
     border: none;
@@ -266,8 +266,8 @@ form{
 
 .area3 textarea{
     width: 90%;
-    height: 50px;
-    font-size: 1em;
+    height: 90px;
+    font-size: 0.9em;
     padding: 6px;
     align-self: center;
     margin: 6px 2px;
@@ -280,18 +280,18 @@ form{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    font-size:1.1em;
+    font-size:1em;
 }
 
 /* Innicio area 4 Subtask*/
 .area4{
-    background: rgba(180, 177, 29,0.3);
+    background: rgba(192, 189, 25, 0.3);
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 260px;
+    height: 290px;
     margin-top: 20px;
-    font-size:1em;
+    font: size 0.9em;
     padding: 5px;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.30);
@@ -303,7 +303,7 @@ form{
     flex-direction: column;
     justify-content: flex-start;
     justify-self: flex-start;
-    font-size: 1em;
+    font-size: 0.9em;
     margin: 2px;
 }
 
@@ -314,25 +314,25 @@ form{
     justify-self: flex-start;
     align-items: center;
     width: 90%;
-    height: 30px;
+    height: 50px;
     margin: 4px;
     padding: 6px;
     text-align: left;
-    font-size: 1em;
+    font-size: 0.8em;
     border-radius: 6px;
     border: none;
 }
 
 .submit_button{
     margin-left: 3px;
-    font-size: 1em;
+    font-size: 0.9em;
     width: 60%;
-    height: 80px;
+    height: 100px;
     border-radius: 10px;
 }
 
 .task-row, .subtask-row{
-    font-size: 1em;
+    font-size: 0.9em;
     font-weight: bold;
     color: #5a2020;
     padding: 2px;
@@ -573,13 +573,14 @@ footer {
     color: #529b53;
 }
     /* Responsividade para Tablets e Mobile (Geral) */
-    @media (max-width: 720px) {
+    @media (max-width: 900px) {
         .navbar{
             display: flex;
             justify-content: center;
             align-self: center;
             height: auto;
             font-size: 0.95em;
+            min-width: 100%;
             
         }
 
@@ -599,13 +600,15 @@ footer {
         .area1, .area2, .area3{
             display: flex;
             flex-direction: column;
+            justify-content: flex-start;
             align-items: center;
             width: 100%;
+            
         }
 
         .area4 label{
             flex-direction: column;
-            align-items: center;
+            align-items: flex-start;
             height: auto !important;
             margin: 2px;
             text-align: center;
@@ -624,31 +627,35 @@ footer {
         .area2 input, .area2 select,
         .area3 input, .area3 select{
             max-width:50%;
-            height: 30%;
-            align-self: center;
-            text-align: center;
-            margin: 2px;
+            height: 40%;
+
         }
 
         #id_of{
-            width: 30% !important;
+            width: 50% !important;
+            height: 40% !important;
         }
 
         .area3 textarea{
-            width: 90% !important;
-            height:40px!important;
+            display: flex;
+            flex-direction: column;
+            width: 85% !important;
+            height:100px!important;
         }
 
         #start_date,  #status, #completion_date, #due_date,
         #priority {
-            width: 30%!important;
+            width: 50%!important;
             height: 100px;
             align-self: center;
         }
 
         .area4 #subtask1, .area4 #subtask2, .area4 #subtask3{
-            width: 90% !important;
-            height:40px!important;
+            display: flex;            
+            flex-direction: column;
+            margin: 2px;
+            max-width: 85% !important;
+            height:50px!important;
         }
 
         .login_form, .change_password, .register_form, .resetlogin {
@@ -673,12 +680,20 @@ footer {
         .task-table {
             min-width: 600px;
         }
+        footer {
+            font-size: 0.85em;
+            min-width: 50%;
+        }
     }
 
     /* Ajustes específicos para smartphones pequenos */
-    @media (max-width: 480px) {
+    @media (max-width: 550px){
+        .task-table {
+            min-width: 320px;
+        }
+    
         h1 {
-            font-size: 1.3em;
+            font-size: 0.8em;
             text-align: center;
         }
 

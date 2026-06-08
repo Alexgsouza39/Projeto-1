@@ -30,7 +30,7 @@ class TaskForm(FlaskForm):
         # Validação: apenas 3 letras
         if not re.match(r'^[A-Za-z]{3}$', value):
             raise ValidationError('ID deve conter exatamente 3 letras.')
-    id_of = StringField('Order', validators=[DataRequired(), Length(min=3, max=3)], render_kw={"placeholder": "Ex: ORD"})
+    id_of = StringField('Order', validators=[DataRequired(), Length(min=3, max=3)], render_kw={"placeholder": "Prefixo Ordem"})
     task = SelectField('Task', choices=[('T1','T1'),('T2','T2'),('T3','T3')], validators=[DataRequired()])
     segment = SelectField('Segment', choices=[('S1','S1'),('S2','S2'),('S3','S3')], validators=[DataRequired()])
     area = SelectField('Area', choices=[('A1','A1'),('A2','A2'),('A3','A3')], validators=[DataRequired()])
@@ -40,7 +40,7 @@ class TaskForm(FlaskForm):
     due_date = DateField('Due Date', validators=[DataRequired()])
     completion_date = DateField('Completion Date', format='%Y-%m-%d', validators=[Optional()], default=None)
     priority = SelectField('Priority', choices=[('low','Low'),('medium','Medium'),('high','High')], validators=[DataRequired()])
-    status = SelectField('Status', choices=[('in course','In Course'),('completed','Completed')], validators=[DataRequired()])
+    status = SelectField('Status', choices=[('in progress','In Progress'),('completed','Completed')], validators=[DataRequired()])
     subtask1 = TextAreaField('Subtask1', render_kw={"placeholder": "Nome da primeira subtarefa (opcional)"})
     subtask2 = TextAreaField('Subtask2', render_kw={"placeholder": "Nome da segunda subtarefa (opcional)"})
     subtask3 = TextAreaField('Subtask3', render_kw={"placeholder": "Nome da terceira subtarefa (opcional)"})
