@@ -53,7 +53,7 @@ class SiteTestCase(unittest.TestCase):
             'due_date': '2026-01-02',
             # Não enviar completion_date se vazio
             'priority': 'low',
-            'status': 'in course',  # Corrigido para valor aceito
+            'status': 'in progress',
             'subtask1': '',
             'subtask2': '',
             'subtask3': '',
