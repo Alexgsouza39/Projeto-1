@@ -3,7 +3,7 @@
     "configurations": [
         {
             "name": "Python: Projeto-1 Flask",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "${workspaceFolder}/app.py",
             "console": "integratedTerminal",
