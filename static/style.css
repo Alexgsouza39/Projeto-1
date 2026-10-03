@@ -19,24 +19,24 @@
 }
 
 a{
-    margin: 10px;
+    margin:10px;
     text-decoration: none;
     color: #ffffff;
 }
 
 h1{
-    margin-left:6px;
+    margin-left:10px;
 }
 
 /*inicio View*/
 body {
-    background: #d8d6d6;
+    background: #494848;
 }
 
 header {
     width: auto;
     min-height: 20%;
-    background: #0350a2;
+    background: #033f7f;
     color: #fff;
     padding: 3px 3px;
     text-align: center;
@@ -46,43 +46,42 @@ header {
 
 .view_tasks{
     margin: 2px;
-    background: #01014b;
-    border-radius: 10px;
+    background: #242469;
     box-shadow: 0 2px 8px rgba(0,0,0,0.07);
     padding: 10px 6px;
 }
 
 
 .task-table {
-    width: 95%;
+    width: 100%;
     border-collapse: collapse;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
+    padding: 4px;
 }
 
 .task-table th, .task-table td {
-    border: 1px solid #e3e3e3;
+    border: 1px solid #ffffff;
     padding: 6px 8px;
     text-align: left;
 }
 
 .task-header th {
-    background: #f7f7f7;
-    color: #0c0c0c;
-    font-size: large;
-    font-weight: 400;
+    background: #f6f6f6;
+    border: 1px solid #ffffff;
+    color: #030a8d;
+    font-size: 12px;
     text-align: center;
 }
 
 .task-row td{
-    background: #e9e8e8c4;
-    font-size: small;
-   font-weight: 400;
+    background: #eeecd3c4;
+    font-size: 10px;
 }
 
 td a {
-    font-weight: bold;
-    color:#000000;
+    color:#6c4502;
     text-decoration: none;
+    font-size: 0.8em;
 }
 
 table[type="table"] {
@@ -99,27 +98,25 @@ table[type="table"] th, table[type="table"] td {
 table[type="table"] th {
     width: 100%;
     background: #f7f7f7;
-    color: #333;
-    font-weight: 200;
+    color: #0b0b0b;
     text-align: center;
-    font-size: 0.8em;
+    font-size: 0.5em;
 }
 
 tr[style*="background:#f7f7f7"] {
-    background: #f7f7f7c4 !important;
+    background: #080808c4 !important;
 }
 
 
-span[style*="color:green"] {
-    font-weight: bold;
+span[style*="color:rgb(3, 127, 3)"] {
+    font-size: 0.6em;
 }
 
 .subtask-row{
-    box-shadow: 0 4px 12px rgba(0,0,0,0.30);
-    background-color: #ffff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.70);
+    background-color: #cbc9c9;
     border-collapse: collapse;
-    font-size: 1em;
-    font-weight: bold;
+    font-size: 0.7em;
     
 }
 
@@ -130,9 +127,7 @@ label {
     justify-content: center;
     text-justify: center;
     color: rgba(0,0,0,0.7);
-    font-weight: bold;
-    font-size: 0.95em;
-    font-weight: bold;
+    font-size: 0.85em;
 }
 
 /*Main index.html*/
@@ -156,7 +151,7 @@ form{
 }
 
 .area1{
-    background: #1dcb177b;
+    background: #147e117b;
     display: flex;
     width: 100%;
     justify-self: center;
@@ -192,7 +187,7 @@ form{
 }
 
 .area2{
-    background: #cb6b179e;
+    background: #9952139e;
     display: flex;
     width: 100%;
     justify-self: center;
@@ -242,7 +237,7 @@ form{
 
 /*Area descrever tarefas*/
 .area3{
-    background: #485be6a8;
+    background: #2a358da8;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -285,13 +280,14 @@ form{
 
 /* Innicio area 4 Subtask*/
 .area4{
-    background: rgba(192, 189, 25, 0.3);
+    background: rgba(156, 154, 22, 0.3);
     display: flex;
+    justify-content: center;
     flex-direction: column;
     width: 100%;
     height: 320px;
-    margin: 20px 0px;
     font-size: 0.9em;
+    margin-top: 20px;
     padding: 2px;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.30);

@@ -28,7 +28,7 @@
         <div class="search-container" style="margin: 5px 0;">
             <input type="text" id="searchInput" onkeyup="filterTable()" 
                    placeholder="🔍 Pesquisar" 
-                   style="width: 140px; height: 19px; padding: 8px; border: 1px solid #ccc; border-radius: 8px; font-size: 12px;">
+                   style="width: 160px; height: 19px; padding: 4px; border: none; border-radius: 8px; font-size: 10px;">
         </div>
 
         <table class="task-table" id="taskTable">
@@ -74,15 +74,15 @@
                     {% for sub in task.subtasks %}
                     <tr class="subtask-row">
                         <td></td>
-                        <td style="color:#333232;">ID: {{ sub.id }}</td>
-                        <td colspan="7" style="padding-left:15px; color: #555;">Etapa:{{ sub.name }}</td>
+                        <td style="color:#484848;font-size: 0.6em;">ID: {{ sub.id }}</td>
+                        <td colspan="7" style="padding-left:8px; color: #2c33b7;font-size: 0.8em;">Etapa:{{ sub.name }}</td>
                         <td colspan="2">
                             {% if sub.completion_date %}
-                                <span style="color:green;">✔ {{ sub.completion_date }}</span>
+                                <span style="color:rgb(3, 127, 3);">✔ {{ sub.completion_date }}</span>
                             {% else %}
                                 <a href="{{ url_for('tasks.done_subtask', subtask_id=sub.id) }}">Complete</a>
                             {% endif %}
-                            | <a  href="{{ url_for('tasks.delete_subtask', subtask_id=sub.id) }}" style="color:red;">Delete</a>
+                            |  <a href="{{ url_for('tasks.delete_subtask', subtask_id=sub.id) }}" style="color:rgb(162, 5, 5);">Delete</a>
                         </td>
                     </tr>
                     {% endfor %}
