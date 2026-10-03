@@ -143,3 +143,4 @@ if __name__ == '__main__':
     except Exception as e:
         logger.error(f"Erro ao iniciar aplicação: {e}", exc_info=True)
         raise
+
